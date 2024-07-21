@@ -4,13 +4,13 @@ Chat Connect is a real-time chat application built using React, Node.js, Express
 
 ## Table of Contents
 
-- [Features](github_link)
-- [Demo](github_link)
-- [Installation](github_link)
-- [Usage](github_link)
-- [Techonologies Used](github_link)
-- [Project Structure](github_link)
-- [Contributing](github_link)
+- [Features](https://github.com/omjaisatya/chat-connect?tab=readme-ov-file#features)
+- [Demo](https://github.com/omjaisatya/chat-connect?tab=readme-ov-file#demo)
+- [Installation](https://github.com/omjaisatya/chat-connect?tab=readme-ov-file#installation)
+- [Usage](https://github.com/omjaisatya/chat-connect?tab=readme-ov-file#usage)
+- [Techonologies Used](https://github.com/omjaisatya/chat-connect?tab=readme-ov-file#technologies-used)
+- [Project Structure](https://github.com/omjaisatya/chat-connect?tab=readme-ov-file#project-structure)
+- [Contributing](https://github.com/omjaisatya/chat-connect?tab=readme-ov-file#contributing)
 
 ## Features
 
