@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
+const { MONGODB_URL } = require("../config/envConfig");
 
-const mongoDB =
-  "mongodb+srv://ckmobile:ckmobile123@cluster0.niuuw.mongodb.net/chat-database?retryWrites=true&w=majority";
+const mongoDB = MONGODB_URL;
 
 const connectDB = async () => {
   try {
