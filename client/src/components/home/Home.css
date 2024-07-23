@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.card {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+input.validate {
+    width: 100%;
+}
+
+.btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.card-action a {
+    margin-right: 10px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.card-action a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Layout */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+
+.col {
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+.col.s12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.col.m6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.col.m5 {
+    flex: 0 0 41.6667%;
+    max-width: 41.6667%;
+}
+
+.col.offset-1 {
+    margin-left: 8.3333%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .col.m6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .col.m5.offset-1 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-left: 0;
+    }
+}
