@@ -4,11 +4,12 @@ const socketio = require("socket.io");
 const connectDB = require("./db/connection");
 const { addUser, getUser, removeUser } = require("./helper");
 const Room = require("./models/Room");
+const { PORT } = require("./config/envConfig");
 
 const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
-const PORT = process.env.PORT || 5000;
+const Port = PORT || 5000;
 
 // Connect to the database
 connectDB();
@@ -68,6 +69,6 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}`);
+server.listen(Port, () => {
+  console.log(`Server listening on port ${Port}`);
 });
