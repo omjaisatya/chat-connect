@@ -1,30 +1,50 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Navbar.css";
 
 const Navbar = () => {
   return (
-    <>
-      <nav className="green">
-        <div className="nav-wrapper">
-          <Link to="/" className="brand-logo">
-            Chat
-          </Link>
-          {/* I'll Update it later */}
-          {/* <ul id="nav-mobile" className="right hide-on-med-and-down">
-            <li>
-              <Link to="/login">Login</Link>
+    <nav className="navbar navbar-expand-lg navbar-light bg-success">
+      <div className="container">
+        <Link to="/" className="navbar-brand">
+          <img
+            src={require("../../img/logo-nav.png")}
+            alt="logo"
+            height={40}
+            width={60}
+          />
+        </Link>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav ms-auto">
+            <li className="nav-item">
+              <Link to="/login" className="nav-link">
+                Login
+              </Link>
             </li>
-            <li>
-              <Link to="/signup">Signup</Link>
+            <li className="nav-item">
+              <Link to="/signup" className="nav-link">
+                Signup
+              </Link>
             </li>
-            <li>
-              <Link to="/logout">Logout</Link>
+            <li className="nav-item">
+              <Link to="/logout" className="nav-link">
+                Logout
+              </Link>
             </li>
-          </ul> */}
+          </ul>
         </div>
-      </nav>
-    </>
+      </div>
+    </nav>
   );
 };
 

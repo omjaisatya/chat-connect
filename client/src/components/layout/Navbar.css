@@ -1,90 +1,11 @@
-/* Navbar.css */
-
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+.navbar {
+    border-bottom: 1px solid #ddd;
 }
 
-/* Navbar styles */
-.nav-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
+.navbar-brand img {
+    max-height: 40px;
 }
 
-.brand-logo {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #802323;
-}
-
-.nav-wrapper ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
-.nav-wrapper ul li {
-    margin-left: 20px;
-}
-
-.nav-wrapper ul li a {
-    color: #cbaeae;
-    text-decoration: none;
-    font-size: 1rem;
-    transition: color 0.3s ease;
-}
-
-.nav-wrapper ul li a:hover {
-    color: #84c02c;
-}
-
-.sidenav-trigger {
-    background: none;
-    border: none;
-    color: #3dc7d4;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    font-size: 1.8rem;
-    display: none;
-}
-
-.sidenav {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 250px;
-    height: 100%;
-    background-color: #bbafaf;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
-    transform: translateX(100%);
-    transition: transform 0.3s ease;
-    padding-top: 60px;
-    z-index: 1000;
-}
-
-.sidenav-open {
-    transform: translateX(0);
-}
-
-.sidenav li {
-    list-style: none;
-    margin: 20px 0;
-}
-
-.sidenav li a {
-    color: #000;
-    text-decoration: none;
-    font-size: 1.2rem;
-    display: block;
-    padding: 10px 20px;
-    transition: background-color 0.3s ease;
-}
-
-.sidenav li a:hover {
-    background-color: #b7b7b7;
+.nav-link {
+    color: #fff !important;
 }
