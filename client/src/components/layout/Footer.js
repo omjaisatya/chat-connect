@@ -17,24 +17,24 @@ const Footer = () => {
             <h5>Quick Links</h5>
             <ul className="list-unstyled">
               <li>
-                <a href="/" className="text-white">
+                <Link to={"/"} className="text-white">
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/login" className="text-white">
+                <Link to={"/login"} className="text-white">
                   Login
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/signup" className="text-white">
+                <Link to={"/signup"} className="text-white">
                   Sign Up
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/logout" className="text-white">
+                <Link to={"/logout"} className="text-white">
                   Logout
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

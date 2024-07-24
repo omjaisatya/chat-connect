@@ -8,7 +8,6 @@ import Chat from "./components/chat/Chat";
 import Login from "./components/layout/Login";
 import Signup from "./components/layout/Signup";
 import Logout from "./components/layout/Logout";
-import Footer from "./components/layout/Footer";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -24,7 +23,6 @@ function App() {
             <Route path="/signup" element={<Signup />} />
             <Route path="/logout" element={<Logout />} />
           </Routes>
-          <Footer />
         </BrowserRouter>
       </UserContext.Provider>
     </div>

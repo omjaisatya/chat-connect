@@ -4,6 +4,7 @@ import RoomList from "./RoomList";
 import io from "socket.io-client";
 import "bootstrap/dist/css/bootstrap.min.css"; // Import Bootstrap CSS
 import "./Home.css"; // Import your custom CSS if needed
+import Footer from "../layout/Footer";
 
 const ENDPT = "localhost:5000";
 let socket;
@@ -55,58 +56,61 @@ const Home = () => {
   };
 
   return (
-    <div className="container mt-4">
-      <div className="row">
-        <div className="col-md-6 col-lg-5">
-          <div className="card bg-dark text-light mb-3">
-            <div className="card-body">
-              <h5 className="card-title">
-                Welcome {user ? user.name : "Guest"}
-              </h5>
-              <form onSubmit={handleSubmit} className="mb-3">
-                <div className="mb-3">
-                  <label htmlFor="room" className="form-label">
-                    Room
-                  </label>
-                  <input
-                    placeholder="Enter a room name"
-                    id="room"
-                    type="text"
-                    className="form-control"
-                    value={room}
-                    onChange={(e) => setRoom(e.target.value)}
-                  />
-                </div>
-                <button className="btn btn-primary" type="submit">
-                  Create Room
-                </button>
-              </form>
-              <form onSubmit={handleUserNameSubmit}>
-                <div className="mb-3">
-                  <label htmlFor="userName" className="form-label">
-                    Name
-                  </label>
-                  <input
-                    placeholder="Enter your name"
-                    id="userName"
-                    type="text"
-                    className="form-control"
-                    value={userName}
-                    onChange={(e) => setUserName(e.target.value)}
-                  />
-                </div>
-                <button className="btn btn-secondary" type="submit">
-                  Set Name
-                </button>
-              </form>
+    <>
+      <div className="container mt-4">
+        <div className="row">
+          <div className="col-md-6 col-lg-5">
+            <div className="card bg-dark text-light mb-3">
+              <div className="card-body">
+                <h5 className="card-title">
+                  Welcome {user ? user.name : "Guest"}
+                </h5>
+                <form onSubmit={handleSubmit} className="mb-3">
+                  <div className="mb-3">
+                    <label htmlFor="room" className="form-label">
+                      Room
+                    </label>
+                    <input
+                      placeholder="Enter a room name"
+                      id="room"
+                      type="text"
+                      className="form-control"
+                      value={room}
+                      onChange={(e) => setRoom(e.target.value)}
+                    />
+                  </div>
+                  <button className="btn btn-primary" type="submit">
+                    Create Room
+                  </button>
+                </form>
+                <form onSubmit={handleUserNameSubmit}>
+                  <div className="mb-3">
+                    <label htmlFor="userName" className="form-label">
+                      Name
+                    </label>
+                    <input
+                      placeholder="Enter your name"
+                      id="userName"
+                      type="text"
+                      className="form-control"
+                      value={userName}
+                      onChange={(e) => setUserName(e.target.value)}
+                    />
+                  </div>
+                  <button className="btn btn-secondary" type="submit">
+                    Set Name
+                  </button>
+                </form>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="col-md-6 col-lg-7">
-          <RoomList rooms={rooms} />
+          <div className="col-md-6 col-lg-7">
+            <RoomList rooms={rooms} />
+          </div>
         </div>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 };
 
