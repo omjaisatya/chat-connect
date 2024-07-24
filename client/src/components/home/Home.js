@@ -14,20 +14,16 @@ const Home = () => {
   const [rooms, setRooms] = useState([]);
 
   useEffect(() => {
-    // Establish a socket connection when the component mounts
     socket = io(ENDPT);
 
-    // Listen for output-rooms event
     socket.on("output-rooms", (rooms) => {
       setRooms(rooms);
     });
 
-    // Listen for room-created event
     socket.on("room-created", (room) => {
       setRooms((prevRooms) => [...prevRooms, room]);
     });
 
-    // Clean up socket connection and event listeners on unmount
     return () => {
       socket.disconnect();
       socket.off("output-rooms");
@@ -103,10 +99,6 @@ const Home = () => {
           <RoomList rooms={rooms} />
         </div>
       </div>
-
-      <Link to="/chat">
-        <button className="btn">Go to Chat</button>
-      </Link>
     </div>
   );
 };

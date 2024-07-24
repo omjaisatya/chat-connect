@@ -55,10 +55,25 @@ const Chat = () => {
   return (
     <div>
       <div>
-        {room_id} {room_name}
+        <h6>
+          Your Room Id is : <span style={{ color: "#180161" }}>{room_id}</span>
+        </h6>{" "}
+        <h6>
+          Your Room Name is:
+          <span style={{ color: "#4F1787" }}>{room_name}</span>{" "}
+        </h6>
       </div>
-      <h1>Chat {JSON.stringify(user)}</h1>
-      <pre>{JSON.stringify(messages, null, "\t")}</pre>
+      <h3>Your name : {JSON.stringify(user.name)}</h3>
+      {/* <pre>{JSON.stringify(messages, null, "\t")}</pre> */}
+      <div>
+        {messages.map((msg, index) => (
+          <div key={index}>
+            <h4>
+              {msg.name}: {msg.text}{" "}
+            </h4>
+          </div>
+        ))}
+      </div>
       <form onSubmit={sendMessage}>
         <input
           type="text"

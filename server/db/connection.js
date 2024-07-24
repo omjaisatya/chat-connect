@@ -5,13 +5,11 @@ const mongoDB = MONGODB_URL;
 
 const connectDB = async () => {
   try {
-    await mongoose.connect(mongoDB, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+    await mongoose.connect(mongoDB);
     console.log("Database connected");
   } catch (err) {
     console.error("Database connection error:", err);
+    process.exit(1);
   }
 };
 

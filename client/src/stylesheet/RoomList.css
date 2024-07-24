@@ -1,0 +1,35 @@
+.room-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 0;
+    margin: 0;
+}
+
+.room-item {
+    display: block;
+    width: calc(50% - 8px);
+    text-decoration: none;
+}
+
+.room-item:hover .room {
+    background-color: #f1f1f1;
+}
+
+@media (max-width: 768px) {
+    .room-item {
+        width: calc(100% - 8px);
+    }
+}
+
+.room {
+    padding: 16px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.room:hover {
+    background-color: #f9f9f9;
+}
