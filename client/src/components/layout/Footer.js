@@ -43,6 +43,18 @@ const Footer = () => {
           <p>
             &copy; {new Date().getFullYear()} Chat Connect. All rights reserved.
           </p>
+          <p>
+            {" "}
+            <a
+              href="https://github.com/omjaisatya"
+              rel="noreferrer"
+              target="_blank"
+              className="text-white"
+            >
+              {" "}
+              Create by Satya Praksh.{" "}
+            </a>
+          </p>
         </div>
       </div>
     </footer>

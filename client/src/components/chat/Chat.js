@@ -5,6 +5,7 @@ import io from "socket.io-client";
 
 const ENDPT = "localhost:5000";
 let socket;
+const MAX_MESSAGE_LENGTH = 200;
 
 const Chat = () => {
   const { user } = useContext(UserContext);
@@ -53,6 +54,12 @@ const Chat = () => {
     navigate(-1);
   };
 
+  const handleInputChange = (event) => {
+    if (event.target.value.length <= MAX_MESSAGE_LENGTH) {
+      setMessage(event.target.value);
+    }
+  };
+
   if (!user) {
     return (
       <div>
@@ -78,7 +85,7 @@ const Chat = () => {
         </h6>
       </div>
       <h3>Your name : {JSON.stringify(user.name)}</h3>
-      <pre>{JSON.stringify(messages, null, "\t")}</pre>
+      {/* <pre>{JSON.stringify(messages, null, "\t")}</pre> */}
       <div className="messages-container border rounded p-3 mb-3 bg-light">
         {messages.map((msg, index) => (
           <div
@@ -95,16 +102,23 @@ const Chat = () => {
           </div>
         ))}
       </div>
-      <form className="message-form d-flex" onSubmit={sendMessage}>
-        <input
-          type="text"
+      <form className="message-form d-flex mb-4" onSubmit={sendMessage}>
+        <textarea
+          className="form-control mb-2"
           value={message}
-          onChange={(event) => setMessage(event.target.value)}
+          onChange={handleInputChange}
           onKeyDown={handleKeyDown}
-        />
-        <button type="submit" className="btn btn-primary">
-          Send Message
-        </button>
+          rows="3"
+          placeholder="Type your message (max 200 characters)"
+        ></textarea>
+        <div className="d-flex justify-content-between align-items-center">
+          <small className="text-muted">
+            {message.length}/{MAX_MESSAGE_LENGTH}
+          </small>
+          <button type="submit" className="btn btn-primary">
+            Send Message
+          </button>
+        </div>
       </form>
     </div>
   );
