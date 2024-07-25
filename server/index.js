@@ -5,6 +5,7 @@ const connectDB = require("./db/connection");
 const { addUser, getUser, removeUser } = require("./helper");
 const Room = require("./models/Room");
 const { PORT } = require("./config/envConfig");
+const cors = require("cors");
 
 const app = express();
 const server = http.createServer(app);
@@ -13,6 +14,8 @@ const Port = PORT || 5000;
 
 // Connect to the database
 connectDB();
+
+app.use(cors({ origin: "*" }));
 
 io.on("connection", (socket) => {
   console.log("New connection:", socket.id);
