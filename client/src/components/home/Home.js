@@ -7,7 +7,7 @@ import "./Home.css";
 import Footer from "../layout/Footer";
 import { icons } from "../../icons/Icons";
 
-const ENDPT = "localhost:5000";
+const ENDPT = process.env.REACT_APP_CLIENT_API;
 let socket;
 
 const Home = () => {
