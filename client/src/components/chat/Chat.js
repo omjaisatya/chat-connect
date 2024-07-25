@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../userContext";
 import { useParams, useNavigate } from "react-router-dom";
 import io from "socket.io-client";
+import { icons } from "../../icons/Icons";
 
 const ENDPT = "localhost:5000";
 let socket;
@@ -62,11 +63,11 @@ const Chat = () => {
 
   if (!user) {
     return (
-      <div>
+      <div className="m-2">
         <button className="btn btn-secondary mb-3" onClick={handleBackClick}>
-          Back
+          <icons.Back />
         </button>
-        <span>Please set your Name, to show this Room</span>
+        <span className="p-3">Please set your Name, to show this Room</span>
       </div>
     );
   }
@@ -74,14 +75,16 @@ const Chat = () => {
   return (
     <div className="container mt-4">
       <button className="btn btn-secondary mb-3" onClick={handleBackClick}>
-        Back
+        <icons.Back />
       </button>
       <div className="mb-3">
         <h6>
-          Your Room Id: <span className="text-primary">{room_id}</span>
+          Your Room Id <icons.Id /> :
+          <span className="text-primary">{room_id}</span>
         </h6>
         <h6>
-          Your Room Name: <span className="text-info">{room_name}</span>
+          Your Room Name <icons.Room /> :{" "}
+          <span className="text-info">{room_name}</span>
         </h6>
       </div>
       <h3>Your name : {JSON.stringify(user.name)}</h3>
@@ -116,7 +119,7 @@ const Chat = () => {
             {message.length}/{MAX_MESSAGE_LENGTH}
           </small>
           <button type="submit" className="btn btn-primary">
-            Send Message
+            <icons.Send />
           </button>
         </div>
       </form>

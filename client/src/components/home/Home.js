@@ -2,9 +2,10 @@ import React, { useContext, useState, useEffect } from "react";
 import { UserContext } from "../../userContext";
 import RoomList from "./RoomList";
 import io from "socket.io-client";
-import "bootstrap/dist/css/bootstrap.min.css"; // Import Bootstrap CSS
-import "./Home.css"; // Import your custom CSS if needed
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./Home.css";
 import Footer from "../layout/Footer";
+import { icons } from "../../icons/Icons";
 
 const ENDPT = "localhost:5000";
 let socket;
@@ -13,7 +14,7 @@ const Home = () => {
   const { user, setUser } = useContext(UserContext);
   const [room, setRoom] = useState("");
   const [rooms, setRooms] = useState([]);
-  const [userName, setUserName] = useState(""); // State for user name input
+  const [userName, setUserName] = useState("");
 
   useEffect(() => {
     socket = io(ENDPT);
@@ -47,11 +48,11 @@ const Home = () => {
       const newUser = {
         name: userName,
         email: `${userName.toLowerCase()}@example.com`,
-        password: "password", // You can set a default or leave this for actual implementation
-        id: Date.now().toString(), // Simple ID generation
+        password: "password",
+        id: Date.now().toString(),
       };
       setUser(newUser);
-      setUserName(""); // Clear the input field after setting user
+      setUserName("");
     }
   };
 
@@ -63,12 +64,12 @@ const Home = () => {
             <div className="card bg-dark text-light mb-3">
               <div className="card-body">
                 <h5 className="card-title">
-                  Welcome {user ? user.name : "Guest"}
+                  <icons.Welcome /> Welcome {user ? user.name : "Guest"}
                 </h5>
                 <form onSubmit={handleSubmit} className="mb-3">
                   <div className="mb-3">
                     <label htmlFor="room" className="form-label">
-                      Room
+                      Room <icons.Room />
                     </label>
                     <input
                       placeholder="Enter a room name"
@@ -86,7 +87,7 @@ const Home = () => {
                 <form onSubmit={handleUserNameSubmit}>
                   <div className="mb-3">
                     <label htmlFor="userName" className="form-label">
-                      Name
+                      Name <icons.Name />
                     </label>
                     <input
                       placeholder="Enter your name"
