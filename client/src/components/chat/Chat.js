@@ -4,7 +4,9 @@ import { useParams, useNavigate } from "react-router-dom";
 import io from "socket.io-client";
 import { icons } from "../../icons/Icons";
 
+// const ENDPT = process.env.CLIENT_API;
 const ENDPT = "localhost:5000";
+// console.log(ENDPT);
 let socket;
 const MAX_MESSAGE_LENGTH = 200;
 
@@ -99,9 +101,9 @@ const Chat = () => {
                 : "bg-secondary text-white"
             }`}
           >
-            <h4>
-              {msg.name}: {msg.text}{" "}
-            </h4>
+            <h6>
+              <icons.User1 className="text-black" /> {msg.name}: {msg.text}{" "}
+            </h6>
           </div>
         ))}
       </div>
