@@ -7,9 +7,20 @@ const Room = require("./models/Room");
 const { PORT } = require("./config/envConfig");
 const cors = require("cors");
 
+// const app = express();
+// const server = http.createServer(app);
+// const io = socketio(server);
+// const Port = PORT || 5000;
+
+// app.use(cors({ origin: "*" }));
+
+// // Connect to the database
+// connectDB();
+
 const app = express();
 const server = http.createServer(app);
 
+// Updated CORS configuration
 const corsOptions = {
   origin: "https://chat-connect-client.vercel.app",
   methods: ["GET", "POST"],
@@ -19,6 +30,7 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
+// Configure socket.io with CORS
 const io = socketio(server, {
   cors: {
     origin: "https://chat-connect-client.vercel.app",
@@ -30,8 +42,6 @@ const Port = PORT || 5000;
 
 // Connect to the database
 connectDB();
-
-app.use(cors({ origin: "*" }));
 
 io.on("connection", (socket) => {
   console.log("New connection:", socket.id);
