@@ -26,6 +26,8 @@ const io = socketio(server, {
   },
 });
 
+const Port = PORT || 5000;
+
 // Connect to the database
 connectDB();
 
