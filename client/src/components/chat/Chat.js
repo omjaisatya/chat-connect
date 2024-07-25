@@ -18,7 +18,11 @@ const Chat = () => {
 
   useEffect(() => {
     if (user) {
-      socket = io(ENDPT);
+      socket = io(ENDPT, {
+        transports: ["websocket", "polling"],
+        withCredentials: true,
+      });
+
       socket.emit("join", { name: user.name, room_id, user_id: user.id });
 
       return () => {
@@ -37,7 +41,7 @@ const Chat = () => {
         socket.off("message");
       };
     }
-  }, []);
+  }, [socket]);
 
   const sendMessage = (event) => {
     event.preventDefault();

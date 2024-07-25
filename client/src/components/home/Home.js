@@ -18,8 +18,13 @@ const Home = () => {
   const [userName, setUserName] = useState("");
 
   useEffect(() => {
-    socket = io(ENDPT);
+    // Initialize socket.io connection
+    socket = io(ENDPT, {
+      transports: ["websocket", "polling"],
+      withCredentials: true, // Ensure credentials are sent with CORS requests
+    });
 
+    // Event listeners for socket events
     socket.on("output-rooms", (rooms) => {
       setRooms(rooms);
     });
