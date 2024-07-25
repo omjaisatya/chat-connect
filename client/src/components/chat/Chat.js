@@ -3,8 +3,9 @@ import { UserContext } from "../../userContext";
 import { useParams, useNavigate } from "react-router-dom";
 import io from "socket.io-client";
 import { icons } from "../../icons/Icons";
+import REACT_BASE from "../../config/envConfig";
 
-const ENDPT = process.env.REACT_APP_CLIENT_API;
+const ENDPT = REACT_BASE;
 let socket;
 const MAX_MESSAGE_LENGTH = 200;
 
@@ -114,10 +115,7 @@ const Chat = () => {
           rows="3"
           placeholder="Type your message (max 200 characters)"
         ></textarea>
-        <div className="d-flex justify-content-between align-items-center">
-          <small className="text-muted">
-            {message.length}/{MAX_MESSAGE_LENGTH}
-          </small>
+        <div className="d-flex justify-content-between align-items-center m-2">
           <button type="submit" className="btn btn-primary">
             <icons.Send />
           </button>

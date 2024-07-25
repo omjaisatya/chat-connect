@@ -6,8 +6,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./Home.css";
 import Footer from "../layout/Footer";
 import { icons } from "../../icons/Icons";
+import REACT_BASE from "../../config/envConfig";
 
-const ENDPT = process.env.REACT_APP_CLIENT_API;
+const ENDPT = REACT_BASE;
 let socket;
 
 const Home = () => {

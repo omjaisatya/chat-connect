@@ -9,8 +9,22 @@ const cors = require("cors");
 
 const app = express();
 const server = http.createServer(app);
-const io = socketio(server);
-const Port = PORT || 5000;
+
+const corsOptions = {
+  origin: "https://chat-connect-client.vercel.app",
+  methods: ["GET", "POST"],
+  allowedHeaders: ["Content-Type"],
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
+
+const io = socketio(server, {
+  cors: {
+    origin: "https://chat-connect-client.vercel.app",
+    methods: ["GET", "POST"],
+  },
+});
 
 // Connect to the database
 connectDB();
