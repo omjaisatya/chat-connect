@@ -6,6 +6,7 @@ import { icons } from "../../icons/Icons";
 
 // const ENDPT = process.env.CLIENT_API;
 const ENDPT = "localhost:5000";
+// const ENDPT = "https://chat-connect-984h9plvx-omjaisatyas-projects.vercel.app/";
 // console.log(ENDPT);
 let socket;
 const MAX_MESSAGE_LENGTH = 200;
